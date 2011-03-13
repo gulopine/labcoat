@@ -3,8 +3,19 @@ from labcoat import Specimen
 
 # Some example objects
 
+class Human:
+    legs = ['left', 'right']
+
+    def set_name(self, name):
+        self.name = name
+
+
+class Furniture:
+    legs = ['a', 'b', 'c', 'd']
+
+
 class Dog:
-    legs = (('front', 'left'), ('front', 'right'), ('back', 'left'), ('back', 'right'))
+    legs = ['front left', 'front right', 'back left', 'back right']
     tail = True
     fur_color = 'black'
 
@@ -14,17 +25,6 @@ class Dog:
     def hump(self, obj):
         if isinstance(obj, Human):
             raise BadDog('Down boy!')
-
-
-class Human:
-    legs = ('left', 'right')
-
-    def set_name(self, name):
-        self.name = name
-
-
-class Furniture:
-    legs = ('a', 'b', 'c', 'd')
 
 
 class BadDog(Exception):
