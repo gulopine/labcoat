@@ -36,7 +36,7 @@ class Specimen:
 
     def __exit__(self, type, value, traceback):
         for success, display, data in store.results:
-            print '%s %s' % (success and '.' or 'F', display % data)
+            print('%s %s' % (success and '.' or 'F', display % data))
 
 
 class Context:
