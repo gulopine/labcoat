@@ -79,9 +79,3 @@ class Context:
     def cannot(self):
         return methods.Cannot(self)
 
-    def print_results(self):
-        for result in self.results:
-            print (' %s' % ('-' if result.success else '*')),
-            print result.output % result.data
-
-
