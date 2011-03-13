@@ -40,13 +40,13 @@ def test():
     with Specimen(Furniture) as couch:
         couch.has(4).or_more.legs
         couch.lacks.tail
-        couch.can_not.bark()
+        couch.cannot.bark()
         rover.can.hump(couch)
 
     with Specimen(Human) as owner:
         owner.has(2).legs
         owner.lacks.tail
-        rover.can_not.hump(owner).because(BadDog)
+        rover.cannot.hump(owner).because(BadDog)
 
 
 if __name__ == '__main__':

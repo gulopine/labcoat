@@ -36,17 +36,17 @@ class Can(MethodTester):
     test.output = 'can %(name)s'
 
 
-class CanNot(MethodTester):
+class Cannot(MethodTester):
     def __getattr__(self, name):
         self.__dict__['name'] = name
-        inner_func = super(CanNot, self).__getattr__(name)
+        inner_func = super(Cannot, self).__getattr__(name)
         def func(*args, **kwargs):
             self.__dict__['result'] = None
             self.__dict__['exception'] = None
 
             inner_func(*args, **kwargs)
 
-            return CanNotResult(self.specimen, self.__dict__['result'], self.__dict__['exception'])
+            return CannotResult(self.specimen, self.__dict__['result'], self.__dict__['exception'])
         return func
 
     def test(self, instance, name, args, kwargs):
@@ -64,7 +64,7 @@ class CanNot(MethodTester):
     test.output = 'can not %(name)s'
 
 
-class CanNotResult:
+class CannotResult:
     def __init__(self, specimen, result, exception):
         self.results = specimen.results
         self.result = result

@@ -76,8 +76,8 @@ class Context:
         return methods.Can(self)
 
     @property
-    def can_not(self):
-        return methods.CanNot(self)
+    def cannot(self):
+        return methods.Cannot(self)
 
     def print_results(self):
         for result in self.results:
